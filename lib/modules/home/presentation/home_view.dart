@@ -27,6 +27,7 @@ class HomeView extends StatelessWidget {
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
+            currentIndex: state.index,
             onTap: (index) {
               final bloc = context.read<HomeBloc>();
               bloc.add(SetPageEvent(index: index));
