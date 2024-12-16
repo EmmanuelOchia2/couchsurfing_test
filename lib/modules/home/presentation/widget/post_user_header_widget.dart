@@ -18,12 +18,14 @@ class PostUserHeaderWidget extends StatelessWidget {
           height: 36,
           width: 36,
           margin: const EdgeInsets.only(right: 4),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            image: DecorationImage(
-              image: NetworkImage(
-                getAvatarUrl(),
-              ),
+            color: Colors.blue,
+          ),
+          child: Center(
+            child: Text(
+              userFullName.toUpperCase().substring(0, 2),
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
@@ -36,9 +38,5 @@ class PostUserHeaderWidget extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  String getAvatarUrl() {
-    return '$avatarUrl${userFullName.replaceAll(' ', '+')}';
   }
 }
